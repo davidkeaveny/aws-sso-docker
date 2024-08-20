@@ -1,0 +1,16 @@
+﻿services:
+  my-app:
+    image: my-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - AWS_REGION=ap-southeast-2
+      - AWS_PROFILE=my-profile
+      - AWS_SSO_SESSION=my-sso-session
+      - AWS_CONFIG_FILE=/app/.aws/config
+      #- AWS_ACCESS_KEY_ID=
+      #- AWS_SECRET_ACCESS_KEY=
+      #- AWS_SESSION_TOKEN=
+    volumes:
+      - ~/.aws:/app/.aws
